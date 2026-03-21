@@ -11,18 +11,53 @@ import {
   RapierRigidBody,
 } from "@react-three/rapier";
 
-const textureLoader = new THREE.TextureLoader();
-const imageUrls = [
-  "/images/react2.webp",
-  "/images/next2.webp",
-  "/images/node2.webp",
-  "/images/express.webp",
-  "/images/mongo.webp",
-  "/images/mysql.webp",
-  "/images/typescript.webp",
-  "/images/javascript.webp",
+// Generate tech logo textures programmatically using canvas
+function createLogoTexture(text: string, color: string, fontSize = 100): THREE.CanvasTexture {
+  const canvas = document.createElement('canvas');
+  canvas.width = 512;
+  canvas.height = 512;
+  const ctx = canvas.getContext('2d')!;
+
+  // White background
+  ctx.fillStyle = '#ffffff';
+  ctx.fillRect(0, 0, 512, 512);
+
+  // Draw text
+  ctx.fillStyle = color;
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+
+  if (text.includes('\n')) {
+    const lines = text.split('\n');
+    const lineHeight = fontSize * 1.2;
+    const startY = 256 - ((lines.length - 1) * lineHeight) / 2;
+    lines.forEach((line, i) => {
+      ctx.font = `bold ${fontSize}px Arial, sans-serif`;
+      ctx.fillText(line, 256, startY + i * lineHeight);
+    });
+  } else {
+    ctx.font = `bold ${fontSize}px Arial, sans-serif`;
+    ctx.fillText(text, 256, 256);
+  }
+
+  const texture = new THREE.CanvasTexture(canvas);
+  texture.needsUpdate = true;
+  return texture;
+}
+
+const techLogos = [
+  { text: 'Python', color: '#3776AB', size: 80 },
+  { text: 'Django', color: '#092E20', size: 80 },
+  { text: 'Fast\nAPI', color: '#009688', size: 80 },
+  { text: 'Postgre\nSQL', color: '#336791', size: 70 },
+  { text: 'MySQL', color: '#4479A1', size: 80 },
+  { text: 'C++', color: '#00599C', size: 120 },
+  { text: 'Git', color: '#F05032', size: 120 },
+  { text: 'Power\nBI', color: '#F2C811', size: 80 },
+  { text: 'Excel', color: '#217346', size: 90 },
 ];
-const textures = imageUrls.map((url) => textureLoader.load(url));
+
+const textures = techLogos.map((logo) => createLogoTexture(logo.text, logo.color, logo.size));
 
 const sphereGeometry = new THREE.SphereGeometry(1, 28, 28);
 
