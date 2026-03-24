@@ -8,19 +8,19 @@ const projects = [
     title: "MLFlow Basic Demo",
     category: "Model Lifecycle Management",
     tools: "Python, MLflow, Scikit-learn, Pandas",
-    image: "/images/Solidx.png",
+    image: "/images/ML-flow.jpg",
   },
   {
     title: "Smart Attendance System",
     category: "AI Face Recognition",
     tools: "Python, Django, PostgreSQL, OpenCV",
-    image: "/images/radix.png",
+    image: "/images/smart_attend.jpeg",
   },
   {
     title: "BlockBites LPU",
     category: "Campus Food Ordering",
     tools: "Python, Django, JavaScript, SQLite",
-    image: "/images/bond.png",
+    image: "/images/Block_bites.png",
   },
 ];
 

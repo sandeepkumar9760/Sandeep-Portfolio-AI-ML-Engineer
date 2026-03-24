@@ -1,5 +1,9 @@
 import "./styles/Career.css";
 
+const certImages = Object.values(
+  import.meta.glob('../assets/certifications/*.png', { eager: true, import: 'default' })
+) as string[];
+
 const Career = () => {
   return (
     <div className="career-section section-container">
@@ -46,7 +50,17 @@ const Career = () => {
             </div>
             <p>
               Master Generative AI & Generative AI Tools. ChatGPT-4 Prompt Engineering. 8 Certifications on Coursera in Data Science, Machine Learning, and Python.
+              <br />
+              <a href="https://drive.google.com/drive/folders/1ywIEEE2_UDenDALf1JYFxkhzvzJ4Lj5T?usp=sharing" target="_blank" rel="noopener noreferrer" style={{ color: "#007bff", textDecoration: "underline" }}>
+                CERTIFICATION CRITERIA (View All Certificates)
+              </a>
             </p>
+          </div>
+          
+          <div className="cert-grid">
+            {certImages.map((src, index) => (
+              <img key={index} src={src} alt={`Certificate ${index + 1}`} className="cert-image" />
+            ))}
           </div>
         </div>
       </div>
