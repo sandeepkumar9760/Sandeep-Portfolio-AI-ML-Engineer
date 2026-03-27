@@ -9,6 +9,8 @@ I have modified the gsap club plugins with the trial plugins, but with the trial
 
 **Techstack** - React, TypeScript, GSAP, ThreeJS, WebGL, HTML, Css, JavaScript
 
+**Live Preview** - https://sandeep-portfolio-ai-ml-engineer.vercel.app/
+
 ![Portfolio-Preview](public/images/preview.png)
 
 ## License
