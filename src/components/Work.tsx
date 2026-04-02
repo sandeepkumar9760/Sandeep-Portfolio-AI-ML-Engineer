@@ -3,7 +3,15 @@ import "./styles/Work.css";
 import WorkImage from "./WorkImage";
 import { MdArrowBack, MdArrowForward } from "react-icons/md";
 
-const projects = [
+type Project = {
+  title: string;
+  category: string;
+  tools: string;
+  image: string;
+  github?: string;
+};
+
+const projects: Project[] = [
   {
     title: "MLFlow Basic Demo",
     category: "Model Lifecycle Management",
@@ -21,6 +29,13 @@ const projects = [
     category: "Campus Food Ordering",
     tools: "Python, Django, JavaScript, SQLite",
     image: "/images/Block_bites.png",
+  },
+  {
+    title: "Customer Churn Prediction",
+    category: "Machine Learning Pipeline",
+    tools: "Python, XGBoost, FastAPI, Streamlit",
+    image: "/images/customer_churn.png",
+    github: "https://github.com/sandeepkumar9760/Customer-Churn-Model"
   },
 ];
 
@@ -100,6 +115,18 @@ const Work = () => {
                           <span className="tools-label">Tools & Features</span>
                           <p>{project.tools}</p>
                         </div>
+                        {project.github && (
+                          <div className="carousel-link" style={{ marginTop: '20px' }}>
+                            <a 
+                              href={project.github} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              style={{ color: 'var(--accent-color, #ff4c29)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 'bold' }}
+                            >
+                              View on GitHub <MdArrowForward />
+                            </a>
+                          </div>
+                        )}
                       </div>
                     </div>
                     <div className="carousel-image-wrapper">
