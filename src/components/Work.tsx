@@ -37,6 +37,13 @@ const projects: Project[] = [
     image: "/images/customer_churn.png",
     github: "https://github.com/sandeepkumar9760/Customer-Churn-Model"
   },
+  {
+    title: "Retail Demand Forecasting",
+    category: "Time Series Forecasting",
+    tools: "Python, Prophet, Pandas, Streamlit",
+    image: "/images/retail_forecasting.png",
+    github: "https://github.com/sandeepkumar9760/-Retail-demand-forecasting"
+  },
 ];
 
 const Work = () => {
