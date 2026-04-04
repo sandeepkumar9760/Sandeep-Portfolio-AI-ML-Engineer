@@ -44,6 +44,13 @@ const projects: Project[] = [
     image: "/images/retail_forecasting.png",
     github: "https://github.com/sandeepkumar9760/-Retail-demand-forecasting"
   },
+  {
+    title: "Docuquery RAG",
+    category: "Retrieval-Augmented Generation",
+    tools: "Python, Langchain, Ollama, Streamlit",
+    image: "/images/placeholder.webp",
+    github: "https://github.com/sandeepkumar9760/Docuquery-rag"
+  },
 ];
 
 const Work = () => {
