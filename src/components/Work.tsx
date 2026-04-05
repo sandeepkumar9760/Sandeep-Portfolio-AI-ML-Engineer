@@ -51,6 +51,13 @@ const projects: Project[] = [
     image: "/images/placeholder.webp",
     github: "https://github.com/sandeepkumar9760/Docuquery-rag"
   },
+  {
+    title: "CampusInsight360",
+    category: "Campus Resource Management",
+    tools: "Python, Django, PostgreSQL, HTML, CSS",
+    image: "/images/lpu_campus_view.png",
+    github: "https://github.com/sandeepkumar9760/CampusInsight360"
+  },
 ];
 
 const Work = () => {
