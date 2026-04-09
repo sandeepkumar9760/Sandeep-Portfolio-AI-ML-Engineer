@@ -29,6 +29,7 @@ const projects: Project[] = [
     category: "Campus Food Ordering",
     tools: "Python, Django, JavaScript, SQLite",
     image: "/images/Block_bites.png",
+    github: "https://github.com/sandeepkumar9760/BlockBites-LPU"
   },
   {
     title: "Customer Churn Prediction",
